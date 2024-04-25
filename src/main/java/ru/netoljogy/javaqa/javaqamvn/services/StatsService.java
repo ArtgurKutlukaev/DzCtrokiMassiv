@@ -11,14 +11,10 @@ public class StatsService {
     }
 
     public long average(long[] sales) {
-        long totalSale = 0;
-        for (long sale : sales) {
-            totalSale += sale;
+        return sum(sales) / sales.length;
 
-        }
-        long averageSale = totalSale / 12;
-        return averageSale;
     }
+
 
     public int monthMaxSale(long[] sales) {
         int month = 0;
@@ -54,6 +50,7 @@ public class StatsService {
 
     public int montSalesAreAboveAverage(long[] sales) {
         int counter = 0;
+        long averageSale = average(sales);
         for (long sale : sales) {
             if (sale > average(sales)) {
                 counter++;

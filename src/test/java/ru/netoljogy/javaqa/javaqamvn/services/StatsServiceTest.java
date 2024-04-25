@@ -41,6 +41,7 @@ class StatsServiceTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
     public void testMin() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -51,22 +52,24 @@ class StatsServiceTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
     public void testMontSalesAreBelowAverage() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         long actual = service.montSalesAreBelowAverage(sales);
-        long expected = 2;
+        long expected = 5;
 
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
     public void montSalesAreAboveAverage() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         long actual = service.montSalesAreAboveAverage(sales);
-        long expected = 2;
+        long expected = 5;
 
         Assertions.assertEquals(expected, actual);
     }
