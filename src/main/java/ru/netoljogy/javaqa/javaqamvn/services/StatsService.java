@@ -40,22 +40,23 @@ public class StatsService {
 
     public int montSalesAreBelowAverage(long[] sales) {
         int counter = 0;
+        long averageSale = average(sales);
         for (long sale : sales) {
-            if (sale < average(sales)) {
+            if (sale < averageSale) {
                 counter++;
             }
         }
-        return counter++;
+        return counter;
     }
 
     public int montSalesAreAboveAverage(long[] sales) {
         int counter = 0;
         long averageSale = average(sales);
         for (long sale : sales) {
-            if (sale > average(sales)) {
+            if (sale > averageSale) {
                 counter++;
             }
         }
-        return counter++;
+        return counter;
     }
 }
